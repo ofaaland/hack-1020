@@ -13,7 +13,7 @@ def create(pool_name, pool_type, vdev_list):
     :param vdev_list: The vdevs needed to create the pool
     :type vdev_list: ``list`` of strings
     """
-    cmd = ['sudo', 'zpool', 'create', pool_name]
+    cmd = ['sudo', 'zpool', 'create', pool_name, pool_type]
     cmd += vdev_list
 
     try:
