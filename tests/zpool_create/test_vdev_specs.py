@@ -9,7 +9,7 @@ def _create_pool_tests(pool_name, pool_type, vdev_spec):
 
 def test_whole_disks():
     pool_types = ['', 'mirror', 'raidz', 'raidz1', 'raidz2']
-    disk_list = disk.find_free_disks()
+    disk_list = disk.disk_list()
 
     for pool_type in pool_types:
         _create_pool_tests('testpool', pool_type, disk_list)
