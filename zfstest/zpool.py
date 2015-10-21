@@ -26,6 +26,8 @@ def create(pool_name, pool_type, vdev_list):
     except:
         pass
 
+    print ' '.join(cmd) + " return code: " + str(proc.returncode)
+    assert(proc.returncode == 0)
 
 def destroy(pool_name):
     cmd = ['sudo', 'zpool', 'destroy', pool_name]
@@ -37,3 +39,6 @@ def destroy(pool_name):
             proc.poll()
     except:
         pass
+
+    print ' '.join(cmd) + " return code: " + str(proc.returncode)
+    assert(proc.returncode == 0)
